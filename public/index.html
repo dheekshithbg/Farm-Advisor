@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farm Advisor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+ <div class="segment">
+	<h1>Farm Advisor</h1>
+  <p class="author">Developed by Dheekshith B G</p>
+
+     
+    <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="n" placeholder="Nitrogen Ratio" required="required" />
+        <input type="text" name="p" placeholder="Phosphorous Ratio" required="required" />
+		<input type="text" name="k" placeholder="Potassium Ratio" required="required" />
+		<input type="text" name="temp" placeholder="Temperature (°C)" required="required" />
+		<input type="text" name="humid" placeholder="Relative Humidity (%) " required="required" />
+		<input type="text" name="pH" placeholder="pH" required="required" />
+		<input type="text" name="rain" placeholder="Rainfall (mm)" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Recommend</button>
+    </form>
+
+    <br><br>
+    {{ prediction_text }}
+    <br><BR>
+    <h4>This is an advanced <br> Crop Recommendation System that uses ML model. </h4>
+ </div>
+</body>
+</html>
