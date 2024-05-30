@@ -15,7 +15,7 @@ def predict():
     float_features = [float(x) for x in request.form.values()]
     features = [np.array(float_features)]
     prediction = model.predict(features)
-    return render_template("index.html", prediction_text = "Recommended Crop : {}".format(prediction))
+    return render_template("index.html", prediction_text = "Recommended Crop : {}".format(prediction[0].upper()))
 
 if __name__ == "__main__":
     flask_app.run(debug=True)
